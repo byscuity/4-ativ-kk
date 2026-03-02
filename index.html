@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca CEP - Encontre o CEP pelo Endereço</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Busca CEP</h1>
+            <p>Encontre o CEP informando o endereço completo</p>
+        </header>
+
+        <main>
+            <form id="cepForm">
+                <div class="form-group">
+                    <label for="uf">Estado (UF):</label>
+                    <select id="uf" required>
+                        <option value="">Selecione o estado</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cidade">Cidade:</label>
+                    <select id="cidade" required disabled>
+                        <option value="">Primeiro selecione o estado</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="endereco">Logradouro (Rua/Avenida):</label>
+                    <input type="text" id="endereco" placeholder="Digite o nome da rua ou avenida" required>
+                </div>
+
+                <button type="submit" id="btnBuscar" disabled>
+                    <span>Buscar CEP</span>
+                    <span class="loading" style="display: none;">Buscando...</span>
+                </button>
+            </form>
+
+            <div id="resultado" class="resultado" style="display: none;">
+                <h2>Resultado da Busca</h2>
+                <div id="resultadoContent"></div>
+            </div>
+
+            <div id="erro" class="erro" style="display: none;"></div>
+        </main>
+
+        <footer>
+            <p>Desenvolvido com a API ViaCEP - Dados atualizados em tempo real</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
